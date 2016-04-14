@@ -1,0 +1,14 @@
+PODS:
+  - XLRefreshSwift (0.1.0)
+
+DEPENDENCIES:
+  - XLRefreshSwift (from `../`)
+
+EXTERNAL SOURCES:
+  XLRefreshSwift:
+    :path: ../
+
+SPEC CHECKSUMS:
+  XLRefreshSwift: 65bc3fde0e0b945e9b8a47f04b68ea1cb7998ebe
+
+COCOAPODS: 0.39.0
