@@ -14,7 +14,7 @@ extension UIScrollView {
         static var XLFooter = "XLRefreshFooterKey"
     }
     
-    var xlfooter: XLRefreshFooter? {
+    public var xlfooter: XLRefreshFooter? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.XLFooter) as? XLRefreshFooter
         }
@@ -39,7 +39,7 @@ extension UIScrollView {
         addSubview(footer)
     }
     
-    func endRefresh() {
+    public func endRefresh() {
         self.xlfooter?.endRefresh()
     }
 }

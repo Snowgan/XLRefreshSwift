@@ -2,9 +2,10 @@
 //  XLRefreshFooter.swift
 //  Pods
 //
-//  Created by Jennifer on 14/4/2016.
+//  Created by Jennifer on 15/4/2016.
 //
 //
+
 
 import UIKit
 
@@ -15,7 +16,7 @@ enum XLRefreshStatus: Int {
     case EndRefresh
 }
 
-class XLRefreshFooter: UIView {
+public class XLRefreshFooter: UIView {
     
     private var scrollView: UIScrollView?
     
@@ -65,24 +66,24 @@ class XLRefreshFooter: UIView {
         self.backgroundColor = UIColor.clearColor()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(action: () -> Void) {
+    convenience public init(action: () -> Void) {
         self.init()
         self.refreshAction = action
     }
     
     // MARK: - UIView methods override
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         textLabel.frame.size = frame.size
         
     }
     
-    override func willMoveToSuperview(newSuperview: UIView?) {
+    override public func willMoveToSuperview(newSuperview: UIView?) {
         
         super.willMoveToSuperview(newSuperview)
         
@@ -107,7 +108,7 @@ class XLRefreshFooter: UIView {
     }
     
     // MARK: - KVO
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         let scrollContentH = scrollView!.contentSize.height
         let visualH = scrollContentH + scrollView!.contentInset.top + scrollView!.contentInset.bottom
