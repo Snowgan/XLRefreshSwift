@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  XLRefreshSwift: 65bc3fde0e0b945e9b8a47f04b68ea1cb7998ebe
+  XLRefreshSwift: 782442942e72f6b00078c842ccf22d3c4149ace2
 
 COCOAPODS: 0.39.0

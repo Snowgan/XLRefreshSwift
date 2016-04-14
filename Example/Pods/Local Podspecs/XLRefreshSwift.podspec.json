@@ -1,15 +1,15 @@
 {
   "name": "XLRefreshSwift",
   "version": "0.1.0",
-  "summary": "A short description of XLRefreshSwift.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/XLRefreshSwift",
+  "summary": "Pull to refresh or load more by Swift.",
+  "description": "This CocoaPod provides the subclass of UIView which can be pulled to refresh or load more.",
+  "homepage": "https://github.com/Snowgan/XLRefreshSwift",
   "license": "MIT",
   "authors": {
     "Snowgan": "jennifergan@163.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/XLRefreshSwift.git",
+    "git": "https://github.com/Snowgan/XLRefreshSwift.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -21,5 +21,6 @@
     "XLRefreshSwift": [
       "Pod/Assets/*.png"
     ]
-  }
+  },
+  "frameworks": "UIKit"
 }
