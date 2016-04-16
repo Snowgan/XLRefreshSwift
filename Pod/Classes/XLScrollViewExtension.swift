@@ -11,7 +11,24 @@ import UIKit
 extension UIScrollView {
     
     private struct AssociatedKeys {
+        static var XLHeader = "XLRefreshHeaderKey"
         static var XLFooter = "XLRefreshFooterKey"
+    }
+    
+    public var xlheader: XLRefreshHeader? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.XLHeader) as? XLRefreshHeader
+        }
+        set {
+            if let oldValue = self.xlheader {
+                oldValue.removeFromSuperview()
+            }
+            
+            if let newValue = newValue {
+                self.addSubview(newValue)
+            }
+            objc_setAssociatedObject(self, &AssociatedKeys.XLHeader, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
     
     public var xlfooter: XLRefreshFooter? {
@@ -30,16 +47,11 @@ extension UIScrollView {
         }
     }
     
-    func addFooterAction(action: () -> Void) {
-        
+    public func endHeaderRefresh() {
+        self.xlheader?.endRefresh()
     }
-    
-    func addFooter() {
-        let footer = XLRefreshFooter()
-        addSubview(footer)
-    }
-    
-    public func endRefresh() {
+
+    public func endFooterRefresh() {
         self.xlfooter?.endRefresh()
     }
 }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C13633756A7CE5EADB9EC282'
+               BlueprintIdentifier = '2B9DFAF16FEEE8AE4E1B6F1F'
                BlueprintName = 'XLRefreshSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'XLRefreshSwift.framework'>

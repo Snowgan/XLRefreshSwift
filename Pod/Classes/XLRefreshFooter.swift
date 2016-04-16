@@ -6,23 +6,15 @@
 //
 //
 
-
 import UIKit
-
-enum XLRefreshStatus: Int {
-    case Normal
-    case DraggingOver
-    case Refreshing
-    case EndRefresh
-}
 
 public class XLRefreshFooter: UIView {
     
     private var scrollView: UIScrollView?
     
-    var textLabel: UILabel!
+    private var textLabel: UILabel!
     
-    var actIndicator: UIActivityIndicatorView?
+    private var actIndicator: UIActivityIndicatorView?
     
     var stateStr: String = "More..." {
         didSet {

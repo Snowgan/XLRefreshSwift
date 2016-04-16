@@ -13,21 +13,28 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 
     @IBOutlet weak var tableView: UITableView!
     
-    var dataCount = 2
-    
-    var footerView: XLRefreshFooter!
+    var dataArr = ["d", "e", "f", "g", "h", "i", "j", "k", "l"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.xlheader = XLRefreshHeader(action: {
+            self.dataArr.insert("a", atIndex: 0)
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC)*2)), dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                self.tableView.endHeaderRefresh()
+            })
+        })
+        
         tableView.xlfooter = XLRefreshFooter(action: {
-            self.dataCount += 5
+            self.dataArr.append("m")
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC)*2)), dispatch_get_main_queue(), {
                 self.tableView.reloadData()
-                self.tableView.endRefresh()
+                self.tableView.endFooterRefresh()
             })
         })
+        
         
     }
     
@@ -37,12 +44,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataCount
+        return dataArr.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
-        cell?.textLabel?.text = "\(indexPath.row)"
+        cell?.textLabel?.text = dataArr[indexPath.row]
         return cell!
     }
 }
