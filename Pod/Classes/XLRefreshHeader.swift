@@ -126,7 +126,6 @@ public class XLRefreshHeader: UIView {
         }
         
         if keyPath == XLContentOffsetPath {
-            print("coffset")
             
             if status == .EndRefresh {
                 status = .Normal

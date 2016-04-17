@@ -106,7 +106,7 @@ public class XLRefreshFooter: UIView {
         let visualH = scrollContentH + scrollView!.contentInset.top + scrollView!.contentInset.bottom
         
         if keyPath == XLContentSizePath {
-            print("csize")
+            
             frame.size.width = scrollView!.frame.width
             
             if visualH  < scrollView!.frame.height {
@@ -118,7 +118,6 @@ public class XLRefreshFooter: UIView {
         }
         
         if keyPath == XLContentOffsetPath {
-            print("coffset")
             
             if status == .EndRefresh {
                 status = .Normal
